@@ -100,7 +100,7 @@ def main():
                                      add_help=False)
     parser.add_argument('-0', '--null',
                         help=('End output lines with a null character rather'
-                              'than newline'),
+                              ' than newline'),
                         action='store_true')
 
     parser.add_argument('-a', '--all',
@@ -113,12 +113,12 @@ def main():
 
     parser.add_argument('-h', '--human-readable',
                         help=('Output sizes in human-readable format using'
-                              'powers of 1024'),
+                              ' powers of 1024'),
                         action='store_true')
 
     parser.add_argument('-i', '--si',
                         help=('Output sizes in human-readable format using'
-                              'powers of 1000'),
+                              ' powers of 1000'),
                         action='store_true')
 
     parser.add_argument('-S', '--separate-dirs',
