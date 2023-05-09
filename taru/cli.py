@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright 2021 Diomidis Spinellis
+# Copyright 2021-2023 Diomidis Spinellis
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,7 +23,9 @@ import argparse
 import re
 import sys
 
-TAR_LINE = re.compile(r'.{10}\s+\w+/\w+\s+(\d+) \d{4}-\d\d-\d\d \d\d:\d\d (.*)')
+TAR_LINE = re.compile(
+    r'.{10}\s+[^/]+/[^\s]+\s+(\d+) \d{4}-\d\d-\d\d \d\d:\d\d (.*)'
+)
 
 
 def humanize(num, power):
