@@ -9,7 +9,7 @@ dependencies = []
 
 setup(
     name='taru',
-    version='1.0.0',
+    version='1.0.1',
     url='https://github.com/dspinellis/taru',
     license='Apache Software License',
     author='Diomidis Spinellis',

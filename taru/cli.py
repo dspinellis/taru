@@ -98,6 +98,8 @@ def display_sizes(args, path_size, size_format):
 
 def main():
     """Program entry point"""
+    signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+
     parser = argparse.ArgumentParser(description='taru usage',
                                      add_help=False)
     parser.add_argument('-0', '--null',
