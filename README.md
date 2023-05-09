@@ -21,9 +21,22 @@ python setup.py install
 
 # Usage
 
-## Example:
+## Examples
+
+## Show the top-5 larger entries. 
 ```
-tar tzvf file.tar.gz | taru
+$ tar tzvf ORCID_2022_10_summaries-000.tar.gz | taru -h | head -5
+425793331       ORCID_2022_10_summaries
+423597236       ORCID_2022_10_summaries/000
+1181208 ORCID_2022_10_summaries/897
+759861  ORCID_2022_10_summaries/013
+250719  ORCID_2022_10_summaries/004
+```
+
+## Sum all file sizes in human-readable form
+```
+$ tar tzvf ORCID_2022_10_summaries-000.tar.gz | taru -sh
+406.1MiB        total
 ```
 
 ## Available command-line options
