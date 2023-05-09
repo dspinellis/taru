@@ -23,7 +23,7 @@ python setup.py install
 
 ## Examples
 
-### Show the top-5 large entries. 
+### Output the five largest entries
 ```
 $ tar tzvf ORCID_2022_10_summaries-000.tar.gz | taru -h | head -5
 425793331       ORCID_2022_10_summaries
@@ -33,7 +33,7 @@ $ tar tzvf ORCID_2022_10_summaries-000.tar.gz | taru -h | head -5
 250719  ORCID_2022_10_summaries/004
 ```
 
-### Sum all file sizes in human-readable form
+### Output the sum all file sizes in human-readable form
 ```
 $ tar tzvf ORCID_2022_10_summaries-000.tar.gz | taru -sh
 406.1MiB        total
