@@ -21,6 +21,7 @@ List the size of directories in a tar file
 
 import argparse
 import re
+import signal
 import sys
 
 TAR_LINE = re.compile(
