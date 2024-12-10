@@ -9,7 +9,7 @@ dependencies = []
 
 setup(
     name='taru',
-    version='1.0.2',
+    version='1.0.3',
     url='https://github.com/dspinellis/taru',
     license='Apache Software License',
     author='Diomidis Spinellis',
@@ -18,6 +18,7 @@ setup(
     description='Taru processes a tar listing to display the cumulative size of files stored in individual directories.',
     long_description=__doc__,
     packages=find_packages(exclude=['tests']),
+    data_files=[("share/man/man1", ["man/taru.1"])],
     include_package_data=True,
     zip_safe=False,
     platforms='any',

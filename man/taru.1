@@ -1,0 +1,74 @@
+.TH taru 1 "10 December 2024" "User Commands" "taru manual"
+.SH NAME
+taru \- summarize tar file usage
+
+.SH SYNOPSIS
+.B taru
+.RI [ \-0 ]
+.RI [ \-a ]
+.RI [ \-c ]
+.RI [ \-h ]
+.RI [ \-i ]
+.RI [ \-S ]
+.RI [ \-s ]
+.RI [ \-? ]
+
+.SH DESCRIPTION
+The
+.B taru
+command-line tool processes a tar(1) listing to display
+the cumulative size of files stored in individual directories.
+Its output and options are similar to the Unix disk usage command du(1).
+
+.SH OPTIONS
+.TP
+.BR \-0 , \--null
+End output lines with a null character rather than newline.
+
+.TP
+.BR \-a , \--all
+Output all files, not just directories.
+
+.TP
+.BR \-c , \--total
+Output a grand total.
+
+.TP
+.BR \-h , \--human-readable
+Output sizes in human-readable format using powers of 1024.
+
+.TP
+.BR \-i , \--si
+Output sizes in human-readable format using powers of 1000.
+
+.TP
+.BR \-S , \--separate-dirs
+Do not include the size of subdirectories.
+
+.TP
+.BR \-s , \--summarize
+Output only the total size of all files.
+
+.TP
+.BR \-? , \--help
+Display this help message.
+
+.SH EXAMPLES
+.nf
+.B taru \-h
+Output sizes in a human-readable format using powers of 1024.
+
+.B taru \-s
+Output only the total size of all files.
+.fi
+
+.SH AUTHOR
+Written by Diomidis Spinellis.
+
+.SH COPYRIGHT
+Copyright \(co 2024 Diomidis Spinellis.
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the Apache Software License.
+
+.SH SEE ALSO
+du(1), tar(1)
