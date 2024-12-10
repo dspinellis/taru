@@ -4,14 +4,14 @@ taru \- summarize tar file usage
 
 .SH SYNOPSIS
 .B taru
-.RI [ \-0 ]
-.RI [ \-a ]
-.RI [ \-c ]
-.RI [ \-h ]
-.RI [ \-i ]
-.RI [ \-S ]
-.RI [ \-s ]
-.RI [ \-? ]
+.RB [ \-0 ]
+.RB [ \-a ]
+.RB [ \-c ]
+.RB [ \-h ]
+.RB [ \-i ]
+.RB [ \-S ]
+.RB [ \-s ]
+.RB [ \-? ]
 
 .SH DESCRIPTION
 The
@@ -22,35 +22,35 @@ Its output and options are similar to the Unix disk usage command du(1).
 
 .SH OPTIONS
 .TP
-.BR \-0 , \--null
+.BR \-0 ", " \-\-null
 End output lines with a null character rather than newline.
 
 .TP
-.BR \-a , \--all
+.BR \-a ", " \-\-all
 Output all files, not just directories.
 
 .TP
-.BR \-c , \--total
+.BR \-c ", " \-\-total
 Output a grand total.
 
 .TP
-.BR \-h , \--human-readable
+.BR \-h ", " \-\-human\-readable
 Output sizes in human-readable format using powers of 1024.
 
 .TP
-.BR \-i , \--si
+.BR \-i ", " \-\-si
 Output sizes in human-readable format using powers of 1000.
 
 .TP
-.BR \-S , \--separate-dirs
+.BR \-S ", " \-\-separate\-dirs
 Do not include the size of subdirectories.
 
 .TP
-.BR \-s , \--summarize
+.BR \-s ", " \-\-summarize
 Output only the total size of all files.
 
 .TP
-.BR \-? , \--help
+.BR \-? ", " \-\-help
 Display this help message.
 
 .SH EXAMPLES
@@ -71,4 +71,5 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the Apache Software License.
 
 .SH SEE ALSO
-du(1), tar(1)
+.BR du (1),
+.BR tar (1)
