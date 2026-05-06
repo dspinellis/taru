@@ -3,13 +3,17 @@ Taru is a Unix command-line tool that processes a tar(1) listing to display
 the cumulative size of files stored in individual directories.
 Its output and options are similar to the Unix disk usage command du(1).
 """
+from pathlib import Path
+
 from setuptools import find_packages, setup
 
 dependencies = []
+version_ns = {}
+exec(Path('taru/__init__.py').read_text(encoding='utf-8'), version_ns)
 
 setup(
     name='taru',
-    version='1.0.5',
+    version=version_ns['__version__'],
     url='https://github.com/dspinellis/taru',
     license='Apache Software License',
     author='Diomidis Spinellis',

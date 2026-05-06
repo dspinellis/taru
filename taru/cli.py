@@ -25,6 +25,8 @@ import re
 import signal
 import sys
 
+from taru import __version__
+
 TAR_LINE = re.compile(
     r'.{10}\s+[^/]+/[^\s]+\s+(\d+) \d{4}-\d\d-\d\d \d\d:\d\d (.*)'
 )
@@ -100,7 +102,8 @@ def display_sizes(args, path_size, size_format):
 
 def main():
     """Program entry point"""
-    signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+    if hasattr(signal, 'SIGPIPE'):
+        signal.signal(signal.SIGPIPE, signal.SIG_DFL)
 
     parser = argparse.ArgumentParser(description='taru usage',
                                      add_help=False)
@@ -138,6 +141,10 @@ def main():
     parser.add_argument('-?', '--help',
                         help='Display this help message',
                         action='store_true')
+
+    parser.add_argument('-v', '--version',
+                        action='version',
+                        version=f'%(prog)s {__version__}')
 
     args = parser.parse_args()
 

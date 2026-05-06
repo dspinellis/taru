@@ -14,9 +14,10 @@
 # limitations under the License.
 #
 
-from taru import cli
+from taru import __version__, cli
 import io
 from types import SimpleNamespace
+import pytest
 
 
 def test_humanize():
@@ -124,3 +125,14 @@ def test_read_input_invalid_utf8_bytes():
     assert total == 20
     assert sizes['home'] == 20
     assert sizes['home/dds'] == 20
+
+
+@pytest.mark.parametrize('option', ['-v', '--version'])
+def test_version_option(capsys, monkeypatch, option):
+    monkeypatch.setattr('sys.argv', ['taru', option])
+
+    with pytest.raises(SystemExit) as excinfo:
+        cli.main()
+
+    assert excinfo.value.code == 0
+    assert capsys.readouterr().out == f'taru {__version__}\n'

@@ -43,7 +43,7 @@ $ tar tzvf ORCID_2022_10_summaries-000.tar.gz | taru -sh
 ```
 $ taru --help
 
-usage: taru [-0] [-a] [-c] [-h] [-i] [-S] [-s] [-?]
+usage: taru [-0] [-a] [-c] [-h] [-i] [-S] [-s] [-?] [-v]
 
 taru usage
 
@@ -59,4 +59,5 @@ optional arguments:
   -S, --separate-dirs   Do not include size of subdirectories
   -s, --summarize       Output only the total size of all files
   -?, --help            Display this help message
+  -v, --version         show program's version number and exit
 ```
