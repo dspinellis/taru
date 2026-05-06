@@ -20,6 +20,7 @@ List the size of directories in a tar file
 """
 
 import argparse
+import io
 import re
 import signal
 import sys
@@ -152,7 +153,10 @@ def main():
     else:
         def size_format(x): return x
 
-    (sizes, total) = read_input(args, sys.stdin)
+    input_stream = io.TextIOWrapper(
+        sys.stdin.buffer, encoding='utf-8', errors='replace'
+    )
+    (sizes, total) = read_input(args, input_stream)
 
     if not args.summarize:
         display_sizes(args, sizes, size_format)

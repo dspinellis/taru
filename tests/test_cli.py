@@ -15,6 +15,7 @@
 #
 
 from taru import cli
+import io
 from types import SimpleNamespace
 
 
@@ -103,3 +104,23 @@ def test_read_input():
     assert sizes['home/dds/file1'] == 20
     assert sizes['home/dds/file2'] == 100
     assert sizes['home/dds/src'] == 1
+
+
+def test_read_input_invalid_utf8_bytes():
+    args = SimpleNamespace()
+    args.separate_dirs = False
+    args.all = True
+
+    file1 = (
+        b'-rwxr-x--- dds/dds       20 2021-07-14 11:41 '
+        b'home/dds/invalid-\xce(\n'
+    )
+
+    input_stream = io.TextIOWrapper(
+        io.BytesIO(file1), encoding='utf-8', errors='replace'
+    )
+
+    (sizes, total) = cli.read_input(args, input_stream)
+    assert total == 20
+    assert sizes['home'] == 20
+    assert sizes['home/dds'] == 20
